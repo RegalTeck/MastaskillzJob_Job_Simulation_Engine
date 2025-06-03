@@ -1,0 +1,26 @@
+{
+  "Beginner": {
+    "instructions": "Write a user story for a basic login feature.",
+    "environment_setup": ["Use Google Docs or Notion"],
+    "constraints": ["Follow 'As a..., I want..., so that...' format"],
+    "expected_deliverables": ["login_user_story.docx"]
+  },
+  "Intermediate": {
+    "instructions": "Create a feature prioritization matrix for a new product.",
+    "environment_setup": ["Use a spreadsheet or FigJam"],
+    "constraints": ["Use RICE or MoSCoW method"],
+    "expected_deliverables": ["feature_prioritization.xlsx"]
+  },
+  "Advanced": {
+    "instructions": "Design a product roadmap for the next two quarters.",
+    "environment_setup": ["Use Miro, Jira, or Roadmunk"],
+    "constraints": ["Include timelines, teams, KPIs"],
+    "expected_deliverables": ["product_roadmap.q1.q2.pdf"]
+  },
+  "Expert": {
+    "instructions": "Conduct a mock product strategy presentation.",
+    "environment_setup": ["Create slides in Google Slides or PPT"],
+    "constraints": ["Use metrics, competitive analysis, and vision alignment"],
+    "expected_deliverables": ["strategy_presentation.pptx"]
+  }
+}

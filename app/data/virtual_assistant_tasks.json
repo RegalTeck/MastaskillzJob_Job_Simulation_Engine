@@ -1,0 +1,26 @@
+{
+  "Beginner": {
+    "instructions": "Schedule a virtual meeting and share invite details.",
+    "environment_setup": ["Use Google Calendar or Outlook"],
+    "constraints": ["Time zone: GMT+1", "Include agenda"],
+    "expected_deliverables": ["meeting_invite_details.txt"]
+  },
+  "Intermediate": {
+    "instructions": "Draft a professional email follow-up to a client.",
+    "environment_setup": ["Use any email tool or Word"],
+    "constraints": ["Be polite, concise, and informative"],
+    "expected_deliverables": ["client_follow_up_email.docx"]
+  },
+  "Advanced": {
+    "instructions": "Create a weekly task tracker for a small team.",
+    "environment_setup": ["Use Excel or Trello"],
+    "constraints": ["Track task status and ownership"],
+    "expected_deliverables": ["weekly_task_tracker.xlsx"]
+  },
+  "Expert": {
+    "instructions": "Manage a mock executive's calendar for a week, resolving conflicts.",
+    "environment_setup": ["Use Google Calendar or Notion"],
+    "constraints": ["Handle overlapping events and travel time"],
+    "expected_deliverables": ["executive_calendar_plan.pdf"]
+  }
+}
