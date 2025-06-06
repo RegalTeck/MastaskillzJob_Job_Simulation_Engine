@@ -121,9 +121,3 @@ pytest
 ---
 
 ## Status: June 3rd and 6th Deliverables Completed
-
-You're now ready to build on June 10 tasks (frontend, packaging, additional roles)
-
----
-
-Built by: Adewale Adeboye
