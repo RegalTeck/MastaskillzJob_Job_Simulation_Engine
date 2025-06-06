@@ -92,7 +92,7 @@ Supported Roles:
 - UI/UX Designer
 - Data Analyst
 - Virtual Assistant
-- ML Engineer
+- AI/ML Engineer
 - Frontend Developer
 - Cloud/DevOps Engineer
 
