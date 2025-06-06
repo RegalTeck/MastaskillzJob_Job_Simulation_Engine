@@ -1,0 +1,214 @@
+{
+  "product_manager_tasks": {
+    "Beginner": {
+      "instructions": "Write a user story for a basic login feature.",
+      "environment_setup": ["Use Google Docs or Notion"],
+      "constraints": ["Follow 'As a..., I want..., so that...' format"],
+      "expected_deliverables": ["login_user_story.docx"],
+      "expected_description": "As a user, I want to log in securely so I can access my dashboard."
+    },
+    "Intermediate": {
+      "instructions": "Create a feature prioritization matrix for a new product.",
+      "environment_setup": ["Use a spreadsheet or FigJam"],
+      "constraints": ["Use RICE or MoSCoW method"],
+      "expected_deliverables": ["feature_prioritization.xlsx"],
+      "expected_description": "A prioritization matrix using the RICE method including Reach, Impact, Confidence, and Effort for each feature."
+    },
+    "Advanced": {
+      "instructions": "Design a product roadmap for the next two quarters.",
+      "environment_setup": ["Use Miro, Jira, or Roadmunk"],
+      "constraints": ["Include timelines, teams, KPIs"],
+      "expected_deliverables": ["product_roadmap.q1.q2.pdf"],
+      "expected_description": "A 2-quarter roadmap with milestone features, team ownership, and success KPIs."
+    },
+    "Expert": {
+      "instructions": "Conduct a mock product strategy presentation.",
+      "environment_setup": ["Create slides in Google Slides or PPT"],
+      "constraints": [
+        "Use metrics, competitive analysis, and vision alignment"
+      ],
+      "expected_deliverables": ["strategy_presentation.pptx"],
+      "expected_description": "Presentation slides with vision, market analysis, and data-backed feature strategy."
+    }
+  },
+  "ui_ux_designer_tasks": {
+    "Beginner": {
+      "instructions": "Create a wireframe for a mobile login screen.",
+      "environment_setup": ["Use Figma, Sketch, or Adobe XD"],
+      "constraints": ["Stick to mobile UI guidelines"],
+      "expected_deliverables": ["login_wireframe.fig"],
+      "expected_description": "Wireframe showing username/password input, login button, and forgot password link."
+    },
+    "Intermediate": {
+      "instructions": "Design a responsive landing page layout.",
+      "environment_setup": ["Use Figma or Webflow"],
+      "constraints": ["Include both desktop and mobile views"],
+      "expected_deliverables": ["landing_page_design.fig"],
+      "expected_description": "Responsive layout with hero section, CTA, testimonials, and footer for both desktop and mobile."
+    },
+    "Advanced": {
+      "instructions": "Conduct a usability audit on an e-commerce checkout flow.",
+      "environment_setup": ["Pick any popular website"],
+      "constraints": ["Document friction points and suggest improvements"],
+      "expected_deliverables": ["usability_audit_report.pdf"],
+      "expected_description": "PDF listing 5+ usability issues with suggested UI/UX improvements and justifications."
+    },
+    "Expert": {
+      "instructions": "Design an end-to-end high-fidelity prototype for a food delivery app.",
+      "environment_setup": ["Use Figma"],
+      "constraints": ["Include onboarding, search, cart, and payment"],
+      "expected_deliverables": ["food_app_prototype.fig"],
+      "expected_description": "Prototype with full interaction flow from login to order confirmation in a food delivery use case."
+    }
+  },
+  "data_analyst_tasks": {
+    "Beginner": {
+      "instructions": "Clean a CSV file with customer data.",
+      "environment_setup": ["Use Python (Pandas) or Excel"],
+      "constraints": ["Remove duplicates, fill missing values"],
+      "expected_deliverables": ["cleaned_customers.csv"],
+      "expected_description": "Cleaned data with no missing entries or duplicate customer IDs."
+    },
+    "Intermediate": {
+      "instructions": "Perform exploratory data analysis (EDA) on sales data.",
+      "environment_setup": ["Use Jupyter Notebook or Google Colab"],
+      "constraints": ["Include visuals with seaborn or matplotlib"],
+      "expected_deliverables": ["sales_eda.ipynb"],
+      "expected_description": "Notebook with visualizations showing trends, outliers, and summary statistics in sales."
+    },
+    "Advanced": {
+      "instructions": "Build a dashboard showing key business KPIs.",
+      "environment_setup": ["Use Tableau, PowerBI, or Plotly Dash"],
+      "constraints": ["Include filters and drill-downs"],
+      "expected_deliverables": ["business_kpis_dashboard.pdf"],
+      "expected_description": "PDF with screenshots of interactive dashboard tracking revenue, churn, and conversion rates."
+    },
+    "Expert": {
+      "instructions": "Build a forecasting model for next quarter's revenue.",
+      "environment_setup": ["Use Python (statsmodels, Prophet)"],
+      "constraints": ["Include MAE/MAPE evaluation"],
+      "expected_deliverables": ["revenue_forecast.ipynb"],
+      "expected_description": "Forecasting notebook using Prophet with error metrics and plotted forecast chart."
+    }
+  },
+  "virtual_assistant_tasks": {
+    "Beginner": {
+      "instructions": "Schedule a virtual meeting and share invite details.",
+      "environment_setup": ["Use Google Calendar or Outlook"],
+      "constraints": ["Time zone: GMT+1", "Include agenda"],
+      "expected_deliverables": ["meeting_invite_details.txt"],
+      "expected_description": "Meeting invite for 10 AM GMT+1 with agenda: project update, Q&A, next steps."
+    },
+    "Intermediate": {
+      "instructions": "Draft a professional email follow-up to a client.",
+      "environment_setup": ["Use any email tool or Word"],
+      "constraints": ["Be polite, concise, and informative"],
+      "expected_deliverables": ["client_follow_up_email.docx"],
+      "expected_description": "Email following up on proposal sent, requesting feedback and scheduling next steps."
+    },
+    "Advanced": {
+      "instructions": "Create a weekly task tracker for a small team.",
+      "environment_setup": ["Use Excel or Trello"],
+      "constraints": ["Track task status and ownership"],
+      "expected_deliverables": ["weekly_task_tracker.xlsx"],
+      "expected_description": "Tracker with task list, owner, due date, and status columns filled for a team of 3."
+    },
+    "Expert": {
+      "instructions": "Manage a mock executive's calendar for a week, resolving conflicts.",
+      "environment_setup": ["Use Google Calendar or Notion"],
+      "constraints": ["Handle overlapping events and travel time"],
+      "expected_deliverables": ["executive_calendar_plan.pdf"],
+      "expected_description": "Weekly calendar plan resolving 2 scheduling conflicts and including travel blocks."
+    }
+  }
+  "ml_engineer_tasks": {
+    "Beginner": {
+      "instructions": "Train a simple linear regression model on housing price data.",
+      "environment_setup": ["Use Jupyter Notebook with scikit-learn"],
+      "constraints": ["Use at least one performance metric (e.g., RMSE)"],
+      "expected_deliverables": ["linear_regression_model.ipynb"],
+      "expected_description": "Notebook that loads housing.csv, trains a LinearRegression model, and evaluates using RMSE."
+    },
+    "Intermediate": {
+      "instructions": "Implement and tune a classification model using cross-validation.",
+      "environment_setup": ["Use scikit-learn with any public dataset"],
+      "constraints": ["Include confusion matrix and ROC curve"],
+      "expected_deliverables": ["classification_model_tuning.ipynb"],
+      "expected_description": "Notebook using GridSearchCV to tune an SVM classifier with visualized results."
+    },
+    "Advanced": {
+      "instructions": "Build a pipeline that includes preprocessing, feature selection, and training.",
+      "environment_setup": ["Use scikit-learn pipelines"],
+      "constraints": ["Handle missing values and scale features"],
+      "expected_deliverables": ["ml_pipeline.ipynb"],
+      "expected_description": "Pipeline that uses SimpleImputer, StandardScaler, SelectKBest, and a RandomForestClassifier."
+    },
+    "Expert": {
+      "instructions": "Deploy a trained ML model as an API.",
+      "environment_setup": ["Use FastAPI or Flask"],
+      "constraints": ["Model should accept JSON input and return predictions"],
+      "expected_deliverables": ["ml_api_deployment.py"],
+      "expected_description": "Python script serving an ML model via FastAPI with /predict endpoint."
+    }
+  },
+  "frontend_developer_tasks": {
+    "Beginner": {
+      "instructions": "Build a simple HTML form with validation.",
+      "environment_setup": ["Use HTML, CSS, JavaScript"],
+      "constraints": ["Include input types, required fields"],
+      "expected_deliverables": ["basic_form.html"],
+      "expected_description": "HTML file with name, email input, and submit button with basic JS validation."
+    },
+    "Intermediate": {
+      "instructions": "Create a responsive landing page.",
+      "environment_setup": ["Use Flexbox or CSS Grid"],
+      "constraints": ["Must support mobile view"],
+      "expected_deliverables": ["responsive_landing.html"],
+      "expected_description": "Landing page with header, CTA, features, and footer styled responsively."
+    },
+    "Advanced": {
+      "instructions": "Implement a React component with state and props.",
+      "environment_setup": ["Use React.js"],
+      "constraints": ["Component must be reusable"],
+      "expected_deliverables": ["CustomComponent.jsx"],
+      "expected_description": "React component that accepts props, uses useState, and renders UI dynamically."
+    },
+    "Expert": {
+      "instructions": "Build a mini SPA using React Router.",
+      "environment_setup": ["Use Create React App or Vite"],
+      "constraints": ["Include at least 3 routes"],
+      "expected_deliverables": ["react_spa_project.zip"],
+      "expected_description": "SPA with routes for Home, About, and Contact pages using React Router v6."
+    }
+  },
+  "cloud_devops_engineer_tasks": {
+    "Beginner": {
+      "instructions": "Write a basic Dockerfile for a Python app.",
+      "environment_setup": ["Use Docker locally"],
+      "constraints": ["App must run on port 8000"],
+      "expected_deliverables": ["Dockerfile"],
+      "expected_description": "Dockerfile that installs FastAPI app and exposes port 8000."
+    },
+    "Intermediate": {
+      "instructions": "Set up a CI workflow with GitHub Actions.",
+      "environment_setup": ["GitHub Actions"],
+      "constraints": ["Run tests on push to main branch"],
+      "expected_deliverables": ["ci_pipeline.yml"],
+      "expected_description": "YAML config that installs deps, runs pytest, and reports status."
+    },
+    "Advanced": {
+      "instructions": "Provision infrastructure using Terraform.",
+      "environment_setup": ["Use AWS free tier"],
+      "constraints": ["Create EC2, S3 using IaC"],
+      "expected_deliverables": ["main.tf"],
+      "expected_description": "Terraform script to deploy EC2 instance and create S3 bucket."
+    },
+    "Expert": {
+      "instructions": "Deploy a containerized app to AWS ECS.",
+      "environment_setup": ["Use AWS CLI or Console"],
+      "constraints": ["Expose a public endpoint"],
+      "expected_deliverables": ["ecs_deployment_script.sh"],
+      "expected_description": "Bash script to build Docker image, push to ECR, and deploy on ECS with public IP."
+    }
+  }
+}
