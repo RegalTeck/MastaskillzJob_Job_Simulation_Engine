@@ -2,17 +2,19 @@ from fastapi import APIRouter
 import json
 import os
 
-# ✅ This line is missing in your file
 router = APIRouter()
 
 @router.get("/generate-task/{role}/{level}")
 def generate_task(role: str, level: str):
     try:
-        normalized_role = role.lower().replace(" ", "_")
-        filepath = f"app/data/{normalized_role}_tasks.json"
+        # Normalize role name to match key in role_tasks.json
+        normalized_role = role.lower().replace(" ", "_") + "_tasks"
+        filepath = "app/data/role_tasks.json"
 
         with open(filepath, "r") as f:
-            tasks = json.load(f)
+            all_tasks = json.load(f)
+
+        tasks = all_tasks[normalized_role]
 
         return {
             "role": role,

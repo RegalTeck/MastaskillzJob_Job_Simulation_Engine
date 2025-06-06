@@ -1,35 +1,129 @@
 # Mastaskillz - Job Simulation Engine (Probation Task)
 
-This is the MVP implementation of a Job Simulation Engine that dynamically generates tiered tasks based on a selected role and skill level.
+This is the MVP implementation of a Job Simulation Engine that dynamically generates tiered, role-based simulation tasks and validates submissions based on the task type (code, document).
 
 ## 📦 Features
 
 - Dynamic task generation using FastAPI
-- Role-based simulation templates (Backend Developer, Product Manager, etc.)
-- Skill taxonomy handled through JSON structure
-- Ready API for frontend integration
+- Unified skill/task taxonomy (`role_tasks.json`)
+- Role-based simulations with Beginner → Expert levels
+- Code task validation via pytest
+- Document task validation via NLP similarity scoring
+- Supports `.txt`, `.docx`, and `.pdf` uploads
+- Full Swagger API docs and curl support
 
-## 🚀 Getting Started
+## Getting Started
 
 1. Clone the repo
-2. Create a virtual environment
-3. Install dependencies
+2. Create and activate a virtual environment
+3. Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Visit Swagger UI:
+4. Run the app locally:
+
+```bash
 uvicorn app.main:app --reload
+```
 
-API Usage
+Then visit [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) for Swagger UI.
+
+---
+
+## API Endpoints
+
+### Generate a Simulation Task
+
+```
 GET /generate-task/{role}/{level}
-Example:
+```
+
+**Example:**
+
+```
 /generate-task/Backend%20Developer/Beginner
+```
 
-JSON Task Templates
-Stored under app/data/, e.g.:
+---
 
-backend_developer_tasks.json
+### Submit a Code Task
 
-product_manager_tasks.json
+```
+POST /submit-code
+```
+
+**Form Fields:** `role`, `level`, `file (.py)`  
+Validates code using pytest with auto-generated test cases.
+
+---
+
+### Submit a Document Task
+
+```
+POST /submit-document
+```
+
+**Form Fields:** `role`, `level`, `description` OR `file` (`.txt`, `.docx`, `.pdf`)  
+Scores similarity with expected output using NLP (difflib).
+
+---
+
+## Data Structure
+
+All role-based tasks are stored in one file:
+
+```
+app/data/role_tasks.json
+```
+
+Each role has 4 tiers (Beginner → Expert) with:
+
+- `instructions`
+- `constraints`
+- `expected_deliverables`
+- `expected_description`
+
+Supported Roles:
+
+- Backend Developer
+- Product Manager
+- UI/UX Designer
+- Data Analyst
+- Virtual Assistant
+- ML Engineer
+- Frontend Developer
+- Cloud/DevOps Engineer
+
+---
+
+## Dependencies
+
+Be sure your `requirements.txt` includes:
+
+```txt
+fastapi
+uvicorn
+python-docx
+pymupdf
+pytest
+```
+
+---
+
+## Notes
+
+- You can test all endpoints using Swagger UI or `curl`
+- Handles both file uploads and manual description input for document tasks
+- Cleanup and feedback are automatic
+
+---
+
+## Status: June 3rd and 6th Deliverables Completed
+
+You're now ready to build on June 10 tasks (frontend, packaging, additional roles)
+
+---
+
+Built by: Adewale Adeboye

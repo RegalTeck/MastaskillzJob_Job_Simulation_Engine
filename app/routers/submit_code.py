@@ -1,53 +1,64 @@
-# File: app/routers/submit_document.py
+# File: app/routers/submit_code.py
 
 from fastapi import APIRouter, UploadFile, File, Form
-from typing import Optional
-import difflib
-import json
+import subprocess
 import os
+import uuid
+import shutil
 
 router = APIRouter()
 
-@router.post("/submit-document")
-def submit_document(
+@router.post("/submit-code")
+def submit_code(
     role: str = Form(...),
     level: str = Form(...),
-    description: Optional[str] = Form(None),
-    file: Optional[UploadFile] = File(None)
+    file: UploadFile = File(...)
 ):
     try:
-        if not description and not file:
-            return {"error": "You must provide either a description or a file."}
+        # ✅ Step 1: Create a temp folder
+        folder_id = str(uuid.uuid4())
+        folder_path = f"temp_submissions/{folder_id}"
+        os.makedirs(folder_path, exist_ok=True)
 
-        # ✅ Step 1: Load the expected task from JSON
-        normalized_role = role.lower().replace(" ", "_")
-        filepath = f"app/data/{normalized_role}_tasks.json"
-        with open(filepath, "r") as f:
-            tasks = json.load(f)
-        task_data = tasks[level]
+        # ✅ Step 2: Save the uploaded file
+        code_path = os.path.join(folder_path, file.filename)
+        with open(code_path, "wb") as f:
+            shutil.copyfileobj(file.file, f)
 
-        # ✅ Step 2: Extract content from uploaded file if no description is passed
-        if not description and file:
-            content = file.file.read().decode("utf-8")
-        else:
-            content = description
+        # ✅ Step 3: Auto-generate a test file
+        # Extract function name (assume filename without .py)
+        module_name = os.path.splitext(file.filename)[0]
+        test_file_content = f"""
+from {module_name} import square
 
-        # ✅ Step 3: Get expected comparison string
-        if "expected_description" in task_data:
-            expected_text = task_data["expected_description"]
-        else:
-            expected_text = "\n".join(task_data.get("expected_deliverables", []))
+def test_square_positive():
+    assert square(2) == 4
 
-        # ✅ Step 4: Score similarity using difflib
-        similarity = difflib.SequenceMatcher(None, content.lower(), expected_text.lower()).ratio()
-        score = round(similarity * 100, 2)  # Convert to percentage
+def test_square_negative():
+    assert square(-3) == 9
+"""
+        test_file_path = os.path.join(folder_path, f"test_{module_name}.py")
+        with open(test_file_path, "w") as tf:
+            tf.write(test_file_content)
+
+        # ✅ Step 4: Run Pytest in the temp folder
+        result = subprocess.run(
+            ["pytest", folder_path, "--tb=short", "-q"],
+            capture_output=True,
+            text=True
+        )
+
+        passed = result.returncode == 0
+
+        # ✅ Step 5: Clean up the temp folder
+        shutil.rmtree(folder_path)
 
         return {
             "role": role,
             "level": level,
-            "score": f"{score}% match",
-            "feedback": "High similarity" if score > 75 else "Could be improved",
-            "matched_against": expected_text
+            "filename": file.filename,
+            "passed": passed,
+            "output": result.stdout or result.stderr
         }
 
     except Exception as e:

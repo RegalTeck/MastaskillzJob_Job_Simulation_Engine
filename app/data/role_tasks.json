@@ -120,7 +120,7 @@
       "expected_deliverables": ["executive_calendar_plan.pdf"],
       "expected_description": "Weekly calendar plan resolving 2 scheduling conflicts and including travel blocks."
     }
-  }
+  },
   "ml_engineer_tasks": {
     "Beginner": {
       "instructions": "Train a simple linear regression model on housing price data.",
@@ -209,6 +209,39 @@
       "constraints": ["Expose a public endpoint"],
       "expected_deliverables": ["ecs_deployment_script.sh"],
       "expected_description": "Bash script to build Docker image, push to ECR, and deploy on ECS with public IP."
+    }
+  },
+  "backend_developer_tasks": {
+    "Beginner": {
+      "instructions": "Build a simple CRUD API for managing tasks.",
+      "environment_setup": ["Use FastAPI or Flask", "Run locally on port 8000"],
+      "constraints": ["Endpoints: GET, POST, PUT, DELETE", "In-memory storage"],
+      "expected_deliverables": ["crud_api.py"],
+      "expected_description": "Python script with FastAPI CRUD endpoints for creating, reading, updating, and deleting tasks."
+    },
+    "Intermediate": {
+      "instructions": "Add rate limiting using Redis to the existing CRUD API.",
+      "environment_setup": ["Use Redis and FastAPI middleware"],
+      "constraints": ["Limit to 5 requests per minute per IP"],
+      "expected_deliverables": ["rate_limited_api.py"],
+      "expected_description": "FastAPI app that integrates Redis for per-IP rate limiting on each endpoint."
+    },
+    "Advanced": {
+      "instructions": "Implement idempotency for POST requests in your API.",
+      "environment_setup": ["Use FastAPI + Redis or UUID tracking"],
+      "constraints": ["Prevent duplicate processing of requests"],
+      "expected_deliverables": ["idempotent_api.py"],
+      "expected_description": "API that uses idempotency keys via headers or Redis cache to avoid duplicate task creation."
+    },
+    "Expert": {
+      "instructions": "Add real-time caching and load balancing simulation.",
+      "environment_setup": ["Use Redis, Uvicorn workers or NGINX"],
+      "constraints": [
+        "Cache GET responses",
+        "Support concurrent client simulation"
+      ],
+      "expected_deliverables": ["load_balanced_cached_api.py"],
+      "expected_description": "FastAPI app with GET route caching using Redis and support for parallel worker load testing."
     }
   }
 }
