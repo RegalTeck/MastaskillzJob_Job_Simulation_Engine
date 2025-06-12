@@ -141,6 +141,12 @@ export default function JobSimulatorUI() {
           />
         </label>
 
+        {file && (
+          <p className="text-sm text-green-600 font-medium mt-1">
+            ✅ File selected: <span className="font-semibold">{file.name}</span>
+          </p>
+        )}
+
         <label className="block mt-4 text-sm font-semibold">
           Or enter description manually:
         </label>
